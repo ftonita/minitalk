@@ -1,11 +1,5 @@
 #include "minitalk.h"
 
-int	print_error(char *str)
-{
-	ft_putstr_fd(str, 1);
-	exit(1);
-}
-
 void	convers_dec(char c, int pid)
 {
 	int	i;
@@ -26,7 +20,7 @@ void	convers_dec(char c, int pid)
 				print_error("SIGUSR2 == -1\n");
 		}
 		i++;
-		usleep(300);
+		usleep(600);
 	}
 }
 
@@ -50,7 +44,7 @@ void	signal_sent(int index, siginfo_t *info, void *u)
 	(void)index;
 	(void)info;
 	(void)u;
-	ft_putstr_fd("gotovo blet \n", 1);
+	ft_putstr_fd("Signal was sent successfully\n", 1);
 	exit(0);
 }
 

@@ -39,3 +39,9 @@ void	ft_putnbr_fd(long long n, int fd)
 		ft_putchar_fd('0' + n % 10, fd);
 	}
 }
+
+int	print_error(char *str)
+{
+	ft_putstr_fd(str, 1);
+	exit(1);
+}

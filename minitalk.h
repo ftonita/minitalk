@@ -12,5 +12,6 @@ void		ft_putchar_fd(char c, int fd);
 int			ft_isdigit(int c);
 int			ft_atoi(const char *str);
 int			ft_is_space(int c);
+int			print_error(char *str);
 
 #endif

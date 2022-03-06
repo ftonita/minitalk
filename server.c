@@ -1,11 +1,5 @@
 #include "minitalk.h"
 
-int	print_error(char *str)
-{
-	ft_putstr_fd(str, 1);
-	exit(1);
-}
-
 void	signal_parse(int index, siginfo_t *info, void *u)
 {
 	static int	c;
@@ -22,9 +16,10 @@ void	signal_parse(int index, siginfo_t *info, void *u)
 			if (kill(info->si_pid, SIGUSR2))
 				print_error("\nError: Failing signing");
 		}
-		ft_putchar_fd(c, 1);
+		write(1, &c, 1);
+		usleep(300);
 		i = 0;
-		c = '\0';
+		c = 0;
 	}
 }
 
